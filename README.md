@@ -1,10 +1,9 @@
-# fampay-backend-assignment
 
-> 2 APIs are integrated for this project which are mainly getAllProject API and searchInDatabase API.
-### Tech Stack
+> To make an API to fetch latest videos sorted in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.
+### Stack
 * NodeJS
 * MySQL
-* Express
+
 
 ### Database Setup
 
@@ -30,22 +29,20 @@ CREATE TABLE videos(
 ```
 
 ### Installation
-1) Clone the repo.
+1) Clone the repo.- `git clone https://github.com/radhathakare/fampay-backend-assignment.git`.
 2) `npm install`
-3)  Create .env file and set below varibles 
-4) `SET ENVIRONMENT VARIABLES DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_NAME`
+3) Create .env file and set below varibles 
+4) Create .env file and set variables DATABASE_HOST, DATABASE_PORT, DATABASE_USER, DATABASE_PASS, DATABASE_NAME.
 5) `node app.js`
 
-# Data Infusion
-We have a function `storeDataInDatabase` in the file `/data-infuser.js` which hits the Youtube V3 Data API, and get all results, and store these results in the database.
-This function is bound to run every 10 seconds, **and uses 3 API Keys**, which is scalable.
 
-### Exposed End Points
 ### Get All Videos
 File: `/routes/getAll.js`
-URL: http://localhost:8888/getAll?page=2      (`page` param is optional)
+URL: http://localhost:3000/getAll
 
-### Search
+### Search Videos
 File: `/routes/search.js`
-URL: http://localhost:8888/search?q=major
-http://localhost:3000/search?q=Bollywood%20old%20vs%20super%20song
+URL: http://localhost:3000/search
+
+### Search video for specific title
+Example URL : http://localhost:3000/search?q=Bollywood%20old%20vs%20super%20song

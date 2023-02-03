@@ -4,7 +4,7 @@ const { insertVideosToDatabase, getMaxPublishedAt } = require("./databonus");
 
 const KEYWORD = "bollywood";
 
-// fetching the data from webpage
+
 const getYoutubeDataFromWebPage = async (url, params) => {
   try {
     const response = await axios.get(url, { params });
@@ -24,7 +24,7 @@ const getYoutubeDataFromWebPage = async (url, params) => {
   }
 };
 
-// Storing the data fetched by API
+
 const storeDataInDatabase = async (json) => {
   const { items } = json;
   const videos = items.map((item) => {
@@ -48,12 +48,12 @@ const storeDataInDatabase = async (json) => {
       publishedAt: new Date(publishedAt),
     };
   });
-  // Insert record in database
+  
   await insertVideosToDatabase(videos);
   console.log(`Inserted ${items.length} videos in DB`);
 };
 
-// Creating an API call for fetching up the data
+// Creating an API call for fetching the data
 const dataFromYoutubeApi = async () => {
   const apiKey = getAPIKey();
   const url = `https://www.googleapis.com/youtube/v3/search`;

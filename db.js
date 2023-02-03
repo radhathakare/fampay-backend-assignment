@@ -15,7 +15,7 @@ if (
   throw new Error(`Cannot connect.`);
 }
 
-// Creating a database connection socket
+
 const connection = mysql.connect({
   host: process.env.DATABASE_HOST,
   port: process.env.DATABASE_PORT,
@@ -24,7 +24,7 @@ const connection = mysql.connect({
   database: process.env.DATABASE_NAME,
 });
 
-// Checking database connection socket
+
 connection.connect((err) => {
   if (err) {
     console.error("Error connecting to database " + err.stack);
