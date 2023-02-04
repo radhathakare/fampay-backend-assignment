@@ -7,8 +7,9 @@
 
 ### Database Setup
 
-1 CREATE DATABASE as fampay.
-2 CREATE TABLE as videos.
+1) CREATE DATABASE as fampay.
+2) CREATE TABLE as videos.
+
 
 
 
