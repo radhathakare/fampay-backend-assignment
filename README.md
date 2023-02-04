@@ -7,26 +7,10 @@
 
 ### Database Setup
 
-```
-CREATE DATABASE fampay;
-USE fampay;
-CREATE TABLE videos(
-    id VARCHAR(255) NOT NULL,
-    videoId VARCHAR(255) NOT NULL,
-    title TEXT NOT NULL,
-    description TEXT NOT NULL,
-    thumbnail VARCHAR(255) NOT NULL,
-    publishedAt DATETIME NOT NULL,
-    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    isActive TINYINT(1) NOT NULL DEFAULT 1,
-    PRIMARY KEY(id),
-    KEY `fampay_videos_videoId` (`videoId`),
-    KEY `fampay_videos_publishedAt` (`publishedAt`),
-    KEY `fampay_videos_isActive` (`isActive`),
-    FULLTEXT(title, description) # to search by jumbled keywords
-);
-```
+1 CREATE DATABASE as fampay.
+2 CREATE TABLE as videos.
+
+
 
 ### Installation
 1) Clone the repo.- `git clone https://github.com/radhathakare/fampay-backend-assignment.git`.
@@ -35,6 +19,9 @@ CREATE TABLE videos(
 4) Create .env file and set variables DATABASE_HOST, DATABASE_PORT, DATABASE_USER, DATABASE_PASS, DATABASE_NAME.
 5) `node app.js`
 
+### Dockerization
+
+Command: docker pull thakareradha0808/fampay-backend:latest
 
 ### Get All Videos
 File: `/routes/getAll.js`
